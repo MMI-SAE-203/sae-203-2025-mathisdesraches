@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import background from '../assets/background.svg';
+---
+
+<Layout title="Le Festival">
+  <section style="padding: 2rem">
+    <h1>Le festival</h1>
+    <p>
+        Le Festival des films d’animation Japonais de Belfort 2025 se distingue par son caractère unique et immersif, en faisant bien plus qu’une simple vitrine pour l’animation japonaise. 
+        Ce qui fait son originalité, c’est avant tout la plongée totale dans la culture nippone qu’il propose. Les visiteurs peuvent non seulement visionner des films, 
+        mais aussi s’immerger dans l’art et la tradition japonaise à travers des ateliers de calligraphie, des démonstrations culinaires authentiques, 
+        et des stands mettant en valeur des produits artisanaux. Cette dimension culturelle élargie offre une expérience multisensorielle qui enrichit l’univers de l’animation.
+    </p>
+    <img src="1">
+  </section>
+</Layout>
+
+<div id="container">
+    <img id="background" src={background.src} alt="" fetchpriority="high" />
+</div>
+  
+  <style>
+    #background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      filter: blur(200px);
+    }
+    #container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    #hero {
+      text-align: center;
+      color: #333;
+    }
+
+  </style>

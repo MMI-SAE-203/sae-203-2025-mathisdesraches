@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import background from '../assets/background.svg';
+---
+
+<Layout title="Histoire">
+  <section style="padding: 2rem">
+    <h1>Histoire</h1>
+    <p>
+        L'histoire des films d'animation japonais, ou anime, débute dans les années 1910 avec des courts métrages rudimentaires. Les années 1960 marquent un tournant avec Osamu Tezuka et "Astro Boy", 
+        qui pose les bases de l'anime moderne. Dans les années 1970, les séries TV, comme "Mazinger Z" et les genres mecha, gagnent en popularité. Les années 1980 voient l'émergence de chefs-d'œuvre 
+        comme "Nausicaä" et "Akira", qui ouvrent la voie à l'anime adulte. Dans les années 1990 et 2000, Studio Ghibli et des séries comme "Pokémon" popularisent l'anime à l'international. 
+        Aujourd'hui, des films comme "Your Name." et "Demon Slayer" confirment son succès mondial.    
+    </p>
+  </section>
+</Layout>
+
+<div id="container">
+    <img id="background" src={background.src} alt="" fetchpriority="high" />
+</div>
+  
+  <style>
+    #background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      filter: blur(200px);
+    }
+    #container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    #hero {
+      text-align: center;
+      color: #333;
+    }
+
+  </style>

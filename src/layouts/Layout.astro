@@ -1,22 +1,59 @@
+---
+const { title = 'Festival d’animation' } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+	<link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body>
+    <header style="
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 
+              0 6px 6px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  margin: 1rem auto;
+">
+  <nav style="
+    display: flex; 
+    justify-content: center; 
+    gap: 1.5rem;
+  ">
+    <a href="/" style="text-decoration: none; color: black; font-weight: bold; font-size: 1rem; transition: color 0.3s ease;">Accueil</a>
+    <a href="/festival" style="text-decoration: none; color: black; font-weight: bold; font-size: 1rem; transition: color 0.3s ease;">Le Festival</a>
+    <a href="/agenda" style="text-decoration: none; color: black; font-weight: bold; font-size: 1rem; transition: color 0.3s ease;">Agenda</a>
+    <a href="/histoire" style="text-decoration: none; color: black; font-weight: bold; font-size: 1rem; transition: color 0.3s ease;">Histoire</a>
+  </nav>
+</header>
+
+
+    <main>
+      <slot />
+    </main>
+  </body>
 </html>
 
 <style>
-	html,
 	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  color: #333; 
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-weight: 600; 
+}
+
+small {
+  font-weight: 300; 
+}
+
 </style>
