@@ -1,5 +1,6 @@
 ---
 import background from '../assets/background.svg';
+import Layout from '../layouts/Layout.astro';
 ---
 
 <div id="container">
@@ -10,36 +11,119 @@ import background from '../assets/background.svg';
       <p>Rendez-vous les 11, 12 et 13 juillet 2025 pour un événement exceptionnel !</p>
       <a href="/agenda" class="button">Découvrir le programme</a>
     </section>
+    <div id="scroll-down">
+      <span></span>
+    </div>
+	
   </main>
 </div>
 
+
+<section style="padding: 2rem">
+<h2>Venez faire des rencontres uniques et partager votre passion !</h2>
+<p>
+	Le Festival des Films d’animation japonais arrive à Belfort pour une édition exceptionnelle ! 
+	Pendant trois jours, du 11 au 13 juillet 2025, le Parc des Expositions de Belfort se transformera en un temple dédié à l’univers de l’animation japonaise, 
+	offrant aux amateurs de cinéma et aux passionnés de culture nippone une immersion totale dans cet art visuel unique.
+</p>
+<img src="/assets/3.png" alt="Festival d'animation" />
+<h2>
+	Venez plonger dans l’univers des films d’animation
+japonais en découvrant toutes les informations de
+l’événement sur notre site web !
+</h2>
+<p>
+	Ne manquez pas cet événement incontournable de l’été 2025 à Belfort ! Que vous soyez un passionné d’animation japonaise ou simplement curieux de découvrir cette culture fascinante, 
+	le Festival de Films d’Animation Japonais est l’événement idéal pour s’évader et s’enrichir.
+</p>
+</section>
+
+
 <style>
+  :root {
+    --primary-color: #dc2323;
+    --text-color: #333;
+  }
+
   #background {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
     z-index: -1;
-    filter: blur(200px);
+    filter: blur(150px);
   }
+
   #container {
-    height: 100%;
+    height: calc(100vh - 100px); 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2rem;
-  }
-  #hero {
     text-align: center;
-    color: #333;
   }
+
+  #hero {
+    margin-top: -100px; 
+  }
+
+  #hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+  }
+
+  #hero p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-top: 0.5rem;
+  }
+
   .button {
     display: inline-block;
     padding: 1rem 2rem;
     margin-top: 1rem;
-    background: #dc2323;
+    background: var(--primary-color);
     color: white;
     border-radius: 15px;
     text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
+
+  .button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  #scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#scroll-down span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-bottom: 5px solid var(--text-color);
+  border-right: 5px solid var(--text-color);
+  transform: rotate(45deg);
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(45deg); 
+  }
+  50% {
+    transform: translateY(10px) rotate(45deg); 
+  }
+}
+
+
 </style>
