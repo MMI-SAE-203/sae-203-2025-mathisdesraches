@@ -1,0 +1,17 @@
+---
+import { getfilm } from '../backend.mjs';
+
+const film = await getfilm();
+---
+
+<h1>Films du Festival</h1>
+
+<ul>
+  {film.map(film => (
+    <li key={film.id}>
+      <h2>{film.title}</h2>
+      <p>{film.description}</p>
+      <small> Sortie: {film.release_date}</small>
+    </li>
+  ))}
+</ul>

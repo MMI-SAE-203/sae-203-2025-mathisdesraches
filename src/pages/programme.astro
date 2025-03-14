@@ -1,0 +1,17 @@
+---
+import { getprogramme } from '../backend.mjs';
+
+const programme = await getprogramme();
+---
+
+<h1>Programme du Festival</h1>
+
+<ul>
+  {programme.map(event => (
+    <li key={event.id}>
+      <h2>{event.title}</h2>
+      <p>{event.description}</p>
+      <small> {event.time}</small>
+    </li>
+  ))}
+</ul>
